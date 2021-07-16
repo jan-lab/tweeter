@@ -1,5 +1,4 @@
 .main-header {
-  /* border: solid red 2px; */
   padding-top: 10px;
   height: 400px;
   width: 100%;
@@ -11,17 +10,11 @@
   background-image: url('../images/absurdity.png');
 }
 
-/* .avatar-image {
-  border: solid blue 2px;
-}*/
-
 .avatar-image img {
-  /* border: solid red 2px; */
   margin: 0;  
 }
 
 .avatar-name h2 {
-  /* border: solid blue 2px; */
   margin: 0;
   font-size: 1.5em;
 }

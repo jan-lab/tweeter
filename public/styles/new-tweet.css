@@ -1,8 +1,16 @@
-/* form {
-  display: flex;
-  flex-direction: column;
-} */
+.error-hidden {
+  display: none;
+  color: rebeccapurple;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  border: solid rebeccapurple 5px;
+  margin-top: 10px;
+}
 
+form {
+  padding-top: 20px;
+}
 
 textarea {
   border: none;
@@ -20,6 +28,13 @@ textarea {
   font-weight:bold;
 }
 
+#tweet-btn-and-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Bungee;
+}
+
 #tweet-btn {
   background-color: navy;
   color: white;
@@ -28,17 +43,69 @@ textarea {
   text-transform: uppercase;
 }
 
-#tweet-btn-and-counter {
+/*** FROM USER INPUT ***/
+
+article.new-tweet {
+  border: solid #545149 3px;
+  margin: 12px 0;
+  padding: 0 12px;
+}
+
+
+/* TWEET HEADER */
+article.new-tweet header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article header img {
+  width: 50px;
+  height: 50px;
+  padding-right: 0px;
+}
+
+article #tweet-user {
+  display: flex;
+  align-items: center;
+}
+
+article #tweet-user #username {
+  margin-left: 8px;
+  font-size: 0.8em;
+}
+
+#handle {
+  color: grey;
+  margin: 8px;
+  font-size: 0.7em;
+}
+/* END TWEET HEADER */
+
+
+article:hover {
+  box-shadow: 10px 5px 5px gray;
+}
+
+article .inputtext {
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* TWEET FOOTER */
+article footer {
+  font-size: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: Bungee;
+  border-top: 3px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-/* .counter {
-  align-self: right;
-} 
-*/
-#new-tweet {
-  
+article footer .fas:hover {
+  color: purple;
 }
+/* END TWEET FOOTER */
