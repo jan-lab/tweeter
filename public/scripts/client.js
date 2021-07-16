@@ -134,7 +134,6 @@ $(document).ready(function() {
         setTimeout(() => {
           $('.error-hidden').slideUp();
         }, 2000);
-       
       });
       return;
     }
