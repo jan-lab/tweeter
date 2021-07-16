@@ -1,4 +1,4 @@
-body > header {
+.main-header {
   /* border: solid red 2px; */
   padding-top: 10px;
   height: 400px;

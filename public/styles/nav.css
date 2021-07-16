@@ -24,3 +24,9 @@ nav span {
   align-items: center;
   font-size: smaller;
 }
+
+@media (max-width: 768px) {
+  nav {
+    background-color: mediumpurple;
+  }
+}
