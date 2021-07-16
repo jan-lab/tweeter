@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+!["Screenshot of desktop view"](https://github.com/jan-lab/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Screenshot of tablet view"](https://github.com/jan-lab/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Screenshot of mobile view"](https://github.com/jan-lab/tweeter/blob/master/docs/mobile-view.png?raw=true)
