@@ -14,22 +14,19 @@ $(document).ready(function() {
   // };
 
   const totalCharacters = 140;
-  const $tweettext = $('#tweet-text')
+  const $tweettext = $('#tweet-text');
   $tweettext.on('input', function(e) {
     let currentCharacters = $(this).val().length;
     let remainingChars = totalCharacters - currentCharacters;
+    const counter = $(this).parent().find('output');
+    counter.text(remainingChars);
+    counter.toggleClass('red', remainingChars < 0);
+    // $('.error-hidden').slideDown("slow", function() {
+    //   // console.log('Total characters cannot be more than 140.');
+    //   // return 'Total characters cannot be more than 140.';
+    //   $('.error-hidden').text('error!');
+    // });
     
-    $('.counter').text(remainingChars);
-
-    if (remainingChars < 0) {
-      //change the color of the counter
-      $('.counter').css('color','red');
-      // $('.error-hidden').slideDown("slow", function() {
-      //   // console.log('Total characters cannot be more than 140.');
-      //   // return 'Total characters cannot be more than 140.';
-      //   $('.error-hidden').text('error!');
-      // });
-    }
   });
 });
 

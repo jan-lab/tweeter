@@ -114,34 +114,40 @@ $(document).ready(function() {
 
   $form.on('submit', function(event) { //submit event
 
-  // if (event.which === 13) {
+    //$('.error-hidden').text('').slideUp();
+    // if (event.which === 13) {
 
     event.preventDefault(); //preventing default behavior of html so that html does not refresh the page, make a GET request, and clutter the url with what you entered in the input/textarea field for post/submit action
-
-    $('#tweet-text').val() = '';
 
     const urlEncodedData = $(this).serialize();
     //console.log('data from post:',urlEncodedData);
     //console.log($('.counter').val())
 
-    const counter = Number($('.counter').val());
+    const count = $('#tweet-text').val().length;
+    const counter = $(this).find('output');
+    //console.log(counter);
 
-    if (counter < 0 || counter >= 140) {
-      $('.error-hidden').slideDown("slow", function() {
-        const msg = counter < 0 ? 'Total characters cannot be more than 140.' : 'Please enter a message';
+    if (count <= 0 || count >= 140) {
+      $('.error-hidden').slideDown(function() {
+        const msg = count > 140 ? 'Total characters cannot be more than 140.' : 'Please enter a message';
         $('.error-hidden').text(msg);
-        setTimeout($('.error-hidden').slideUp("slow"), 5000);
+        setTimeout(() => {
+          $('.error-hidden').slideUp();
+        }, 2000);
+       
       });
-    } else {
-
-      //$('.error-hidden').slideUp("slow");
-    
-      $.post('/tweets', urlEncodedData, (response) => {
-        console.log(response);
-        
-        loadTweets(); //fetch the post after I know I have successfully created a new piece of data - once my post request resolves (goes inside .then or callback)
-      });
+      return;
     }
+
+    //$('.error-hidden').slideUp("slow");
+  
+    $.post('/tweets', urlEncodedData, (response) => {
+      console.log(response);
+      $('#tweet-text').val('');
+      counter.text('140');
+      loadTweets(); //fetch the post after I know I have successfully created a new piece of data - once my post request resolves (goes inside .then or callback)
+    });
+    
 
     //if you don't include the callback fxn, jQuery assumes you want a promise and returns a promise
     // $.post('/api/posts', urlEncodedData)
