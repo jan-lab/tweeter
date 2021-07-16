@@ -19,7 +19,7 @@ $(document).ready(function() {
     
 
   const renderTweets = function(tweets) {
-    // remove all child nodes and content from the selected elements //best time to empty the container - right before we fill the form
+    // remove all child nodes + content from the selected elements - best time to empty the container - right before we fill the form
     $('#tweet-container').empty();
 
     for (const tweet of tweets) {
@@ -40,10 +40,8 @@ $(document).ready(function() {
               <span id="username">${tweet.user.name}</span>
             </div>
             <span id="handle">${tweet.user.handle}</span>
-          </header>
-          
-          <p class="inputtext">${escape(tweet.content.text)}</p>
-          
+          </header>        
+          <p class="inputtext">${escape(tweet.content.text)}</p>  
           <footer class="tweet-footer">
             <span id="tweet-timestamp">${timeago.format(tweet.created_at)}</span>
             <div id="tweet-icons">
@@ -56,16 +54,6 @@ $(document).ready(function() {
         ;
     return $tweet;
   };
-  //To refactor later
-  // const createTweetElement = (tweet) => {
-  //   const $avatar = $('<img>').avatars;
-  //   const $name = $('<h3>').text(`${tweet.name}`);
-  //   const $handle = $('<h3>').text(`${tweet.handle}`);
-  //   const $text = $('<h3>').text(`${tweet.text}`);
-  //   const $timeago = $('<h3>').text(`${timago.format(tweet.created_at)}`);
-  //   //let $tweet = $(`<article class="tweet">${timeago.format(1473245023718)}</article>`);
-  //   return $tweet;
-  // }
 
   renderTweets(data);
 
